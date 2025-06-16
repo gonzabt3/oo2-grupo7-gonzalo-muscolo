@@ -30,17 +30,17 @@ public class CU1 {
 	    areaABM.agregar("Contabilidad", "Area contable");
 	    
 	    EmployeeABM employeeABM = new EmployeeABM();
-	    employeeABM.agregar("Juan", "contador", 10000.00,areaABM.traer(1), "juan", "password");
+	    int idEmployee = employeeABM.agregar("Juan", "contador", 10000.00,areaABM.traer(1), "juan", "password");
 	    
 	  
 	    CustomerABM customerABM = new CustomerABM();
-	    customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
+	    int idCustomer = customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
 	
 	    StatusABM statusABM = new StatusABM();
 	    statusABM.agregar("Abierto", "El ticket está abierto");
 	   
 	    TicketABM ticketABM = new TicketABM();
-	    ticketABM.agregar("Ticket 1", "Descripción del Ticket 1",customerABM.traer(2), employeeABM.traer(1));
+	    ticketABM.agregar("Ticket 1", "Descripción del Ticket 1",customerABM.traer(idCustomer), employeeABM.traer(idEmployee));
 	    
 	}
 	

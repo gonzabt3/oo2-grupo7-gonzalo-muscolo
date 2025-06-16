@@ -31,21 +31,21 @@ public class CU3 {
 	    areaABM.agregar("Contabilidad", "Area contable");
 	    
 	    EmployeeABM employeeABM = new EmployeeABM();
-	    employeeABM.agregar("Juan", "contador", 10000.00,areaABM.traer(1), "juan", "password");
+	    int idEmployee= employeeABM.agregar("Juan", "contador", 10000.00,areaABM.traer(1), "juan", "password");
 	    
 	  
 	    CustomerABM customerABM = new CustomerABM();
-	    customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
+	    int idCustomer = customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
 	
 	    StatusABM statusABM = new StatusABM();
 	    statusABM.agregar("Abierto", "El ticket está abierto");
 	    statusABM.agregar("Cerrado", "El ticket está cerrado");
 	    TicketABM ticketABM = new TicketABM();
-	    int idTicketCreado = ticketABM.agregar("Ticket 1", "Descripción del Ticket 1",customerABM.traer(2), employeeABM.traer(1));
+	    int idTicketCreado = ticketABM.agregar("Ticket 1", "Descripción del Ticket 1",customerABM.traer(idCustomer), employeeABM.traer(idEmployee));
 	    
 	    System.out.println("Ticket creado: " + ticketABM.traer(idTicketCreado).toString());
 	    ticketABM.cambiarEstatus(ticketABM.traer(idTicketCreado), "Cerrado");
-	    System.out.println("Ticket modificado: " + ticketABM.traer(1).toString());
+	    System.out.println("Ticket modificado: " + ticketABM.traer(idTicketCreado).toString());
 
 	    
 	}
