@@ -1,5 +1,6 @@
 package negocio;
 
+import dao.StatusDao;
 import dao.TicketDao;
 import datos.Customer;
 import datos.Employee;
@@ -12,15 +13,17 @@ import java.util.List;
 
 public class TicketABM {
     TicketDao dao = new TicketDao();
+    StatusDao statusDao = new StatusDao();
 
-    public int agregar(String title, String description, Date dateOfCreation,
-                       Status status, Customer customer,
+    public int agregar(String title, String description,
+                        Customer customer,
                        Employee employee) throws Exception {
-        // Validate that associated entities are not null
+        Status status = statusDao.traerPorNombre("Abierto");
+        Date currentDate = new Date();
         if (status == null || customer == null || employee == null) {
             throw new Exception("Error: Employee, Customer, or Status must be created beforehand.");
         }
-        Ticket ticket = new Ticket(title, description, dateOfCreation, status, customer, employee);
+        Ticket ticket = new Ticket(title, description, currentDate, status, customer, employee);
         return dao.agregar(ticket);
     }
     

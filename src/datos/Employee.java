@@ -6,18 +6,20 @@ public class Employee {
     private String position;
     private Double salary;
     private User user;
+    private Area area;
     
     public Employee() {
 		super();
     }
     
     // Constructor
-    public Employee(int id, String name, String position, Double salary, User user) {
+    public Employee(int id, String name, String position, Double salary,Area area, User user) {
         this.idEmployee = id;
         this.name = name;
         this.position = position;
         this.salary = salary;
         this.user = user;
+        this.area = area;
     }
 
     // Getters and setters
@@ -60,6 +62,18 @@ public class Employee {
     public void setUser(User user) {
         this.user = user;
     }
+    
+    public Area getArea() {
+		return area;
+	}
+    
+    	public void setArea(Area area) {
+    					this.area = area;
+    	}
+    	
+    	public int getId() {
+			return idEmployee;
+		}
     
     public String toString() {
 		return "Employee [idEmployee=" + idEmployee + ", name=" + name + ", position=" + position + ", salary=" + salary

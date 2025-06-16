@@ -4,15 +4,13 @@ public class Admin {
     private int idAdmin;
     private String name;
     private User user;
-    private Area area;
 
     public Admin() {}
 
-    public Admin(int idAdmin, String name, User user, Area area) {
+    public Admin(int idAdmin, String name, User user) {
         this.idAdmin = idAdmin;
         this.name = name;
         this.user = user;
-        this.area = area;
     }
 
     public int getIdAdmin() {
@@ -39,11 +37,4 @@ public class Admin {
         this.user = user;
     }
 
-    public Area getArea() {
-        return area;
-    }
-
-    public void setArea(Area area) {
-        this.area = area;
-    }
 }

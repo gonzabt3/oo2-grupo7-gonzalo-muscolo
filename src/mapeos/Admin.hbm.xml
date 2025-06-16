@@ -7,6 +7,5 @@
         </id>
         <property name="name" column="name" type="string"/>
         <many-to-one name="user" class="datos.User" column="id_user" cascade="all"/>
-        <many-to-one name="area" class="datos.Area" column="id_area" cascade="none"/>
     </class>
 </hibernate-mapping>

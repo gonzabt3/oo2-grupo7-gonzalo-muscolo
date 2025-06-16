@@ -26,11 +26,11 @@ public class AdminABM {
         return dao.traer();
     }
 
-    public int agregar(String name, String username, String password, Area area) throws Exception {
+    public int agregar(String name, String username, String password) throws Exception {
         // Create the User object
         User user = new User(username, password);
         // Create the Admin object with User and existing Area
-        Admin admin = new Admin(0, name, user, area);
+        Admin admin = new Admin(0, name, user);
         return dao.agregar(admin);
     }
 

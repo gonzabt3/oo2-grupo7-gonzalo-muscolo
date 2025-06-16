@@ -1,6 +1,7 @@
 package negocio;
 
 import dao.EmployeeDao;
+import datos.Area;
 import datos.Employee;
 import datos.User;
 
@@ -21,11 +22,11 @@ public class EmployeeABM {
         return dao.traer();
     }
 
-    public int agregar(String name, String position, Double salary, String username, String password) throws Exception {
+    public int agregar(String name, String position, Double salary,Area area, String username, String password) throws Exception {
         // Create the User object
         User user = new User(username, password);
         // Create the Employee object with the User
-        Employee employee = new Employee(0, name, position, salary, user);
+        Employee employee = new Employee(0, name, position, salary,area, user);
         return dao.agregar(employee);
     }
 

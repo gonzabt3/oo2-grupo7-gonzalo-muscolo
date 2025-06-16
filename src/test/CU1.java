@@ -16,7 +16,7 @@ import negocio.StatusABM;
 import negocio.TicketABM;
 import negocio.UserABM;
 
-public class TestHBM {
+public class CU1 {
 
 	public static void main(String[] args) throws Exception {
 		
@@ -27,30 +27,20 @@ public class TestHBM {
 	    System.out.println("OK");
 	    
 	    AreaABM areaABM = new AreaABM();
-	    areaABM.agregar("Area 1", "Descripcion del Area 1");
-	    
-	    UserABM userABM = new UserABM();
-	    userABM.agregar("user1", "password1");
+	    areaABM.agregar("Contabilidad", "Area contable");
 	    
 	    EmployeeABM employeeABM = new EmployeeABM();
-	    employeeABM.agregar("gonzalo", "developer", 1.2, areaABM.traer(1), "gonza", "password");
+	    employeeABM.agregar("Juan", "contador", 10000.00,areaABM.traer(1), "juan", "password");
 	    
-	    AdminABM adminABM = new AdminABM();
-	    adminABM.agregar("carlos", "admin1", "adminpass");
-	    
+	  
 	    CustomerABM customerABM = new CustomerABM();
 	    customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
 	
 	    StatusABM statusABM = new StatusABM();
-	    statusABM.agregar("Activo", "El usuario está activo");
+	    statusABM.agregar("Abierto", "El ticket está abierto");
 	   
 	    TicketABM ticketABM = new TicketABM();
-	    ticketABM.agregar("Ticket 1", "Descripción del Ticket 1", new Date(),statusABM.traer(1),customerABM.traer(2), employeeABM.traer(1));
-	    
-	    ComentarioABM comentarioABM = new ComentarioABM();
-	    System.out.println("Agregando comentario...");
-	    System.out.println("Employee: " + employeeABM.traer(1).toString());
-	    comentarioABM.agregar("Comentario 1", new Date(), ticketABM.traer(1), employeeABM.traer(1));
+	    ticketABM.agregar("Ticket 1", "Descripción del Ticket 1",customerABM.traer(2), employeeABM.traer(1));
 	    
 	}
 	
