@@ -9,6 +9,7 @@ import dao.HibernateUtil;
 import datos.Ticket;
 import negocio.AdminABM;
 import negocio.AreaABM;
+import negocio.ComentarioABM;
 import negocio.CustomerABM;
 import negocio.EmployeeABM;
 import negocio.StatusABM;
@@ -45,7 +46,12 @@ public class TestHBM {
 	   
 	    TicketABM ticketABM = new TicketABM();
 	    ticketABM.agregar("Ticket 1", "Descripción del Ticket 1", new Date(),statusABM.traer(1),customerABM.traer(2), employeeABM.traer(1));
-	   
+	    
+	    ComentarioABM comentarioABM = new ComentarioABM();
+	    System.out.println("Agregando comentario...");
+	    System.out.println("Employee: " + employeeABM.traer(1).toString());
+	    comentarioABM.agregar("Comentario 1", new Date(), ticketABM.traer(1), employeeABM.traer(1));
+	    
 	}
 	
 }

@@ -60,4 +60,9 @@ public class Employee {
     public void setUser(User user) {
         this.user = user;
     }
+    
+    public String toString() {
+		return "Employee [idEmployee=" + idEmployee + ", name=" + name + ", position=" + position + ", salary=" + salary
+				+ ", user=" + user.getUsername() + "]";
+	}
 }

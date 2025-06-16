@@ -23,4 +23,8 @@ public class TicketABM {
         Ticket ticket = new Ticket(title, description, dateOfCreation, status, customer, employee);
         return dao.agregar(ticket);
     }
+    
+    public Ticket traer(int idTicket) {
+		return dao.traer(idTicket);
+	}
 }
