@@ -36,4 +36,8 @@ public class Status {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+    public String toString() {
+		return "Status [idStatus=" + idStatus + ", name=" + name + ", description=" + description + "]";
+	}
 }

@@ -30,4 +30,13 @@ public class TicketABM {
     public Ticket traer(int idTicket) {
 		return dao.traer(idTicket);
 	}
+    
+    public void cambiarEstatus(Ticket ticket, String nuevoEstatus) throws Exception {
+		Status status = statusDao.traerPorNombre(nuevoEstatus);
+		if (status == null) {
+			throw new Exception("Error: El estatus proporcionado no existe.");
+		}
+		ticket.setStatus(status);
+		dao.actualizar(ticket);
+	}
 }

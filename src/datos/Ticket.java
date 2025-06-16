@@ -96,4 +96,17 @@ public class Ticket {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+    
+    public String toString() {
+		return "Ticket{" +
+				"idTicket=" + idTicket +
+				", title='" + title + '\'' +
+				", description='" + description + '\'' +
+				", dateOfCreation=" + dateOfCreation +
+				", dateOfEnd=" + dateOfEnd +
+				", status=" + status.toString() +
+				", customer=" + customer +
+				", employee=" + employee +
+				'}';
+	}
 }
