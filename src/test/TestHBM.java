@@ -7,6 +7,7 @@ import negocio.AdminABM;
 import negocio.AreaABM;
 import negocio.CustomerABM;
 import negocio.EmployeeABM;
+import negocio.StatusABM;
 import negocio.UserABM;
 
 public class TestHBM {
@@ -33,6 +34,10 @@ public class TestHBM {
 	    
 	    CustomerABM customerABM = new CustomerABM();
 	    customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
+	
+	    StatusABM statusABM = new StatusABM();
+	    statusABM.agregar("Activo", "El usuario está activo");
+	   
 	}
 	
 }
