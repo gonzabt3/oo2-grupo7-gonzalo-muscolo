@@ -36,5 +36,9 @@ public class Admin {
     public void setUser(User user) {
         this.user = user;
     }
+    
+    public String toString() {
+		return "Admin [idAdmin=" + idAdmin + ", name=" + name + ", username=" + user.getUsername() + "]";
+	}
 
 }

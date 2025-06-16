@@ -23,7 +23,7 @@ public class AdminABM {
     }
 
     public List<Admin> traer() {
-        return dao.traer();
+        return dao.traerTodos();
     }
 
     public int agregar(String name, String username, String password) throws Exception {

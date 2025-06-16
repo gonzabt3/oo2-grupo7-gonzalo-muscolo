@@ -36,7 +36,7 @@ public abstract class Dao<T> {
     }
 
  	@SuppressWarnings("unchecked")
-	public List<T> traer() throws HibernateException {
+	public List<T> traerTodos() throws HibernateException {
     	List<T> lista=null;
         try {
             iniciaOperacion();                    

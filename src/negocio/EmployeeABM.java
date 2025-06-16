@@ -19,7 +19,7 @@ public class EmployeeABM {
     }
 
     public List<Employee> traer() {
-        return dao.traer();
+        return dao.traerTodos();
     }
 
     public int agregar(String name, String position, Double salary,Area area, String username, String password) throws Exception {

@@ -11,8 +11,8 @@ public class UserABM {
         return dao.traer(idUser);
     }
 
-    public List<User> traer() {
-        return dao.traer();
+    public List<User> traerTodos() {
+        return dao.traerTodos();
     }
 
     public int agregar(String username, String password) throws Exception {

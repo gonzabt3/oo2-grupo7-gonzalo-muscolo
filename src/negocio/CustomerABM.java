@@ -18,7 +18,7 @@ public class CustomerABM {
     }
 
     public List<Customer> traer() {
-        return dao.traer();
+        return dao.traerTodos();
     }
 
     public int agregar(String name, String email, String username, String password) throws Exception {

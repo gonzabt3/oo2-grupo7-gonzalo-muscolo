@@ -16,12 +16,11 @@ import negocio.StatusABM;
 import negocio.TicketABM;
 import negocio.UserABM;
 
-public class CU3 {
+public class CU4 {
 
 	public static void main(String[] args) throws Exception {
 		
 		TestUtil.limpiarBaseDeDatos();
-
 	    Session session = HibernateUtil.getSessionFactory().openSession();
 	    session.beginTransaction();
 	    session.close();
@@ -37,16 +36,24 @@ public class CU3 {
 	    CustomerABM customerABM = new CustomerABM();
 	    customerABM.agregar("gonzalo", "gonzalo@gmail.com","gonza", "password");
 	
-	    StatusABM statusABM = new StatusABM();
-	    statusABM.agregar("Abierto", "El ticket está abierto");
-	    statusABM.agregar("Cerrado", "El ticket está cerrado");
-	    TicketABM ticketABM = new TicketABM();
-	    int idTicketCreado = ticketABM.agregar("Ticket 1", "Descripción del Ticket 1",customerABM.traer(2), employeeABM.traer(1));
+	    AdminABM adminABM = new AdminABM();
+	    adminABM.agregar("carlos", "admin1", "adminpass");
 	    
-	    System.out.println("Ticket creado: " + ticketABM.traer(idTicketCreado).toString());
-	    ticketABM.cambiarEstatus(ticketABM.traer(idTicketCreado), "Cerrado");
-	    System.out.println("Ticket modificado: " + ticketABM.traer(1).toString());
-
+	    UserABM userABM = new UserABM();
+	    System.out.println("Listado de Admin:");
+	    adminABM.traer().forEach(user -> {
+	    	System.out.println(user.toString());
+	    });
+	    
+	    System.out.println("Listado de Customer:");
+	    customerABM.traer().forEach(user -> {
+	    	System.out.println(user.toString());
+	    });
+	    
+	    System.out.println("Listado de Employee:");
+	    employeeABM.traer().forEach(user -> {
+	    	System.out.println(user.toString());
+	    });
 	    
 	}
 	
