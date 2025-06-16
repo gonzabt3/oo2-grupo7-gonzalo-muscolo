@@ -14,7 +14,11 @@
 		<property name="connection.pool_size">2</property>
 		<property name="hibernate.enable_lazy_load_no_trans">true</property>
 		<!--Mapeo Entidades   -->
-
+		<mapping resource="mapeos/Area.hbm.xml"/>
+		<mapping resource="mapeos/User.hbm.xml"/>
+		<mapping resource="mapeos/Employee.hbm.xml"/>
+		<mapping resource="mapeos/Admin.hbm.xml"/>
+		<mapping resource="mapeos/Customer.hbm.xml"/>
 		
 	</session-factory>
 	
