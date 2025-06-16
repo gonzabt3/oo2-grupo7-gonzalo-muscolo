@@ -1,13 +1,18 @@
 package test;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import org.hibernate.Session;
 
 import dao.HibernateUtil;
+import datos.Ticket;
 import negocio.AdminABM;
 import negocio.AreaABM;
 import negocio.CustomerABM;
 import negocio.EmployeeABM;
 import negocio.StatusABM;
+import negocio.TicketABM;
 import negocio.UserABM;
 
 public class TestHBM {
@@ -37,6 +42,9 @@ public class TestHBM {
 	
 	    StatusABM statusABM = new StatusABM();
 	    statusABM.agregar("Activo", "El usuario está activo");
+	   
+	    TicketABM ticketABM = new TicketABM();
+	    ticketABM.agregar("Ticket 1", "Descripción del Ticket 1", new Date(),statusABM.traer(1),customerABM.traer(2), employeeABM.traer(1));
 	   
 	}
 	

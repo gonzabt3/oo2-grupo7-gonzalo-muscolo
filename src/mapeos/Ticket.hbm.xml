@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="datos.Ticket" table="ticket">
+        <id name="idTicket" column="id_ticket">
+            <generator class="identity"/>
+        </id>
+        <property name="title" column="title" type="string"/>
+        <property name="description" column="description" type="string"/>
+        <property name="dateOfCreation" column="date_of_creation" type="date"/>
+        <property name="dateOfEnd" column="date_of_end" type="string"/>
+        <many-to-one name="status" class="datos.Status" column="id_status" not-null="true" cascade="none"/>
+        <many-to-one name="customer" class="datos.Customer" column="id_customer" not-null="true" cascade="none"/>
+        <many-to-one name="employee" class="datos.Employee" column="id_employee" not-null="true" cascade="none"/>
+    </class>
+</hibernate-mapping>

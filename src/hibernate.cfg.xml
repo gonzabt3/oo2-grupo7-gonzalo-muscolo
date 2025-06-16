@@ -20,6 +20,7 @@
 		<mapping resource="mapeos/Admin.hbm.xml"/>
 		<mapping resource="mapeos/Customer.hbm.xml"/>
 		<mapping resource="mapeos/Status.hbm.xml"/>
+		<mapping resource="mapeos/Ticket.hbm.xml"/>
 		
 	</session-factory>
 	
